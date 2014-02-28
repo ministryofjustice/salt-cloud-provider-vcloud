@@ -30,3 +30,5 @@ nosetests.xml
 # Translations
 *.mo
 
+.idea/
+*~
