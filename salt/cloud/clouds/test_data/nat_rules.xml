@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EdgeGateway xmlns="http://www.vmware.com/vcloud/v1.5" status="1" name="Prison Visit sys Prod (nft00076i2)" id="urn:vcloud:gateway:e458e36e-c5e1-4732-9aea-44368201d4cc" type="application/vnd.vmware.admin.edgeGateway+xml" href="https://api.vcd.portal.skyscapecloud.com/api/admin/edgeGateway/e458e36e-c5e1-4732-9aea-44368201d4cc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vmware.com/vcloud/v1.5 http://api.vcd.portal.skyscapecloud.com/api/v1.5/schema/master.xsd">
+    <Link rel="up" type="application/vnd.vmware.vcloud.vdc+xml" href="https://api.vcd.portal.skyscapecloud.com/api/vdc/a6a77da2-c9a9-4b44-af32-c71f8782a6cd"/>
+    <Link rel="edgeGateway:redeploy" href="https://api.vcd.portal.skyscapecloud.com/api/admin/edgeGateway/e458e36e-c5e1-4732-9aea-44368201d4cc/action/redeploy"/>
+    <Link rel="edgeGateway:configureServices" type="application/vnd.vmware.admin.edgeGatewayServiceConfiguration+xml" href="https://api.vcd.portal.skyscapecloud.com/api/admin/edgeGateway/e458e36e-c5e1-4732-9aea-44368201d4cc/action/configureServices"/>
+    <Link rel="edgeGateway:reapplyServices" href="https://api.vcd.portal.skyscapecloud.com/api/admin/edgeGateway/e458e36e-c5e1-4732-9aea-44368201d4cc/action/reapplyServices"/>
+    <Link rel="edgeGateway:syncSyslogSettings" href="https://api.vcd.portal.skyscapecloud.com/api/admin/edgeGateway/e458e36e-c5e1-4732-9aea-44368201d4cc/action/syncSyslogServerSettings"/>
+    <Description/>
+    <Tasks>
+        <Task status="error" startTime="2014-02-21T11:41:43.237Z" serviceNamespace="com.vmware.vcloud" operationName="networkConfigureEdgeGatewayServices" operation="Updated services EdgeGateway Prison Visit sys Prod (nft00076i2)(e458e36e-c5e1-4732-9aea-44368201d4cc)" expiryTime="2014-05-22T11:41:43.237+01:00" endTime="2014-02-21T11:41:44.410Z" cancelRequested="false" name="task" id="urn:vcloud:task:d77e3585-8ed1-47c4-a659-062af5d687c4" type="application/vnd.vmware.vcloud.task+xml" href="https://api.vcd.portal.skyscapecloud.com/api/task/d77e3585-8ed1-47c4-a659-062af5d687c4">
+            <Error minorErrorCode="NETWORK_INTERNAL_SERVER" message="Cannot update edge gateway &quot;Prison Visit sys Prod (nft00076i2)&quot;
+java.util.concurrent.ExecutionException: com.vmware.vcloud.fabric.nsm.error.VsmException: VSM response error (11506): [Nat] Invalid NAT RuleTag '30,000'. Valid input range is 65537-131072." majorErrorCode="500"/>
+            <User type="application/vnd.vmware.admin.user+xml" name="555.75.3cb58f" href="https://api.vcd.portal.skyscapecloud.com/api/admin/user/2376b124-1804-4e9d-a445-34576b3e5158"/>
+            <Organization type="application/vnd.vmware.vcloud.org+xml" name="57-75-2-96f755" href="https://api.vcd.portal.skyscapecloud.com/api/org/d9a1fc35-c342-4529-bdaa-af91bb088fe3"/>
+            <Progress>0</Progress>
+            <Details>  Cannot update edge gateway "Prison Visit sys Prod (nft00076i2)"</Details>
+        </Task>
+    </Tasks>
+    <Configuration>
+        <GatewayBackingConfig>full</GatewayBackingConfig>
+        <GatewayInterfaces>
+            <GatewayInterface>
+                <Name>nft00076i2</Name>
+                <DisplayName>nft00076i2</DisplayName>
+                <Network type="application/vnd.vmware.admin.network+xml" name="nft00076i2" href="https://api.vcd.portal.skyscapecloud.com/api/admin/network/0c615aab-a376-45c5-afe6-46fd0ad2a0ab"/>
+                <InterfaceType>uplink</InterfaceType>
+                <SubnetParticipation>
+                    <Gateway>172.26.1.65</Gateway>
+                    <Netmask>255.255.255.224</Netmask>
+                    <IpAddress>172.26.1.69</IpAddress>
+                    <IpRanges/>
+                </SubnetParticipation>
+                <SubnetParticipation>
+                    <Gateway>37.26.91.49</Gateway>
+                    <Netmask>255.255.255.248</Netmask>
+                    <IpAddress>37.26.91.54</IpAddress>
+                    <IpRanges>
+                        <IpRange>
+                            <StartAddress>37.26.91.54</StartAddress>
+                            <EndAddress>37.26.91.54</EndAddress>
+                        </IpRange>
+                    </IpRanges>
+                </SubnetParticipation>
+                <ApplyRateLimit>false</ApplyRateLimit>
+                <InRateLimit>100.0</InRateLimit>
+                <OutRateLimit>100.0</OutRateLimit>
+                <UseForDefaultRoute>true</UseForDefaultRoute>
+            </GatewayInterface>
+            <GatewayInterface>
+                <Name>DB</Name>
+                <DisplayName>DB</DisplayName>
+                <Network type="application/vnd.vmware.admin.network+xml" name="DB" href="https://api.vcd.portal.skyscapecloud.com/api/admin/network/f683b4b2-3c12-4007-b217-c8113154e9ba"/>
+                <InterfaceType>internal</InterfaceType>
+                <SubnetParticipation>
+                    <Gateway>10.0.21.1</Gateway>
+                    <Netmask>255.255.255.0</Netmask>
+                    <IpAddress>10.0.21.1</IpAddress>
+                </SubnetParticipation>
+                <ApplyRateLimit>false</ApplyRateLimit>
+                <UseForDefaultRoute>false</UseForDefaultRoute>
+            </GatewayInterface>
+            <GatewayInterface>
+                <Name>Admin</Name>
+                <DisplayName>Admin</DisplayName>
+                <Network type="application/vnd.vmware.admin.network+xml" name="Admin" href="https://api.vcd.portal.skyscapecloud.com/api/admin/network/39273960-eef3-4e1d-bd93-1b3442b921c3"/>
+                <InterfaceType>internal</InterfaceType>
+                <SubnetParticipation>
+                    <Gateway>10.0.1.1</Gateway>
+                    <Netmask>255.255.255.0</Netmask>
+                    <IpAddress>10.0.1.1</IpAddress>
+                </SubnetParticipation>
+                <ApplyRateLimit>false</ApplyRateLimit>
+                <UseForDefaultRoute>false</UseForDefaultRoute>
+            </GatewayInterface>
+            <GatewayInterface>
+                <Name>Web</Name>
+                <DisplayName>Web</DisplayName>
+                <Network type="application/vnd.vmware.admin.network+xml" name="Web" href="https://api.vcd.portal.skyscapecloud.com/api/admin/network/c5d6cc99-4ab7-4c79-a538-3dcfe282a6bf"/>
+                <InterfaceType>internal</InterfaceType>
+                <SubnetParticipation>
+                    <Gateway>10.0.11.1</Gateway>
+                    <Netmask>255.255.255.0</Netmask>
+                    <IpAddress>10.0.11.1</IpAddress>
+                </SubnetParticipation>
+                <ApplyRateLimit>false</ApplyRateLimit>
+                <UseForDefaultRoute>false</UseForDefaultRoute>
+            </GatewayInterface>
+        </GatewayInterfaces>
+        <EdgeGatewayServiceConfiguration>
+            <GatewayDhcpService>
+                <IsEnabled>true</IsEnabled>
+                <Pool>
+                    <IsEnabled>true</IsEnabled>
+                    <Network type="application/vnd.vmware.vcloud.orgVdcNetwork+xml" name="Admin" href="https://api.vcd.portal.skyscapecloud.com/api/admin/network/39273960-eef3-4e1d-bd93-1b3442b921c3"/>
+                    <DefaultLeaseTime>3600</DefaultLeaseTime>
+                    <MaxLeaseTime>7200</MaxLeaseTime>
+                    <LowIpAddress>10.0.1.129</LowIpAddress>
+                    <HighIpAddress>10.0.1.164</HighIpAddress>
+                </Pool>
+            </GatewayDhcpService>
+            <FirewallService>
+                <IsEnabled>false</IsEnabled>
+                <DefaultAction>drop</DefaultAction>
+                <LogDefaultAction>false</LogDefaultAction>
+            </FirewallService>
+            <NatService>
+                <IsEnabled>true</IsEnabled>
+                <NatRule>
+                    <RuleType>DNAT</RuleType>
+                    <IsEnabled>true</IsEnabled>
+                    <Id>65537</Id>
+                    <GatewayNatRule>
+                        <Interface type="application/vnd.vmware.admin.network+xml" name="nft00076i2" href="https://api.vcd.portal.skyscapecloud.com/api/admin/network/0c615aab-a376-45c5-afe6-46fd0ad2a0ab"/>
+                        <OriginalIp>37.26.91.54</OriginalIp>
+                        <OriginalPort>22</OriginalPort>
+                        <TranslatedIp>10.0.1.100</TranslatedIp>
+                        <TranslatedPort>22</TranslatedPort>
+                        <Protocol>tcp</Protocol>
+                    </GatewayNatRule>
+                </NatRule>
+                <NatRule>
+                    <RuleType>SNAT</RuleType>
+                    <IsEnabled>true</IsEnabled>
+                    <Id>65538</Id>
+                    <GatewayNatRule>
+                        <Interface type="application/vnd.vmware.admin.network+xml" name="nft00076i2" href="https://api.vcd.portal.skyscapecloud.com/api/admin/network/0c615aab-a376-45c5-afe6-46fd0ad2a0ab"/>
+                        <OriginalIp>10.0.0.0/8</OriginalIp>
+                        <TranslatedIp>37.26.91.54</TranslatedIp>
+                    </GatewayNatRule>
+                </NatRule>
+            </NatService>
+            <GatewayIpsecVpnService>
+                <IsEnabled>true</IsEnabled>
+                <Tunnel>
+                    <Name>A to Enhanced</Name>
+                    <Description/>
+                    <IpsecVpnThirdPartyPeer>
+                        <PeerId>37.26.91.117</PeerId>
+                    </IpsecVpnThirdPartyPeer>
+                    <PeerIpAddress>37.26.91.117</PeerIpAddress>
+                    <PeerId>37.26.91.117</PeerId>
+                    <LocalIpAddress>172.26.1.69</LocalIpAddress>
+                    <LocalId>37.26.91.54</LocalId>
+                    <LocalSubnet>
+                        <Name>Web</Name>
+                        <Gateway>10.0.11.1</Gateway>
+                        <Netmask>255.255.255.0</Netmask>
+                    </LocalSubnet>
+                    <LocalSubnet>
+                        <Name>Admin</Name>
+                        <Gateway>10.0.1.1</Gateway>
+                        <Netmask>255.255.255.0</Netmask>
+                    </LocalSubnet>
+                    <LocalSubnet>
+                        <Name>DB</Name>
+                        <Gateway>10.0.21.1</Gateway>
+                        <Netmask>255.255.255.0</Netmask>
+                    </LocalSubnet>
+                    <PeerSubnet>
+                        <Name>10.0.0.0/24</Name>
+                        <Gateway>10.0.0.0</Gateway>
+                        <Netmask>255.255.255.0</Netmask>
+                    </PeerSubnet>
+                    <PeerSubnet>
+                        <Name> 10.0.10.0/24</Name>
+                        <Gateway> 10.0.10.0</Gateway>
+                        <Netmask>255.255.255.0</Netmask>
+                    </PeerSubnet>
+                    <PeerSubnet>
+                        <Name> 10.0.20.0/24</Name>
+                        <Gateway> 10.0.20.0</Gateway>
+                        <Netmask>255.255.255.0</Netmask>
+                    </PeerSubnet>
+                    <SharedSecret>xM773x34resh93EqdIWp9mhZuWrgImpX27K4cuq4rrn7NJcw3f64g84m4vk5ff35</SharedSecret>
+                    <SharedSecretEncrypted>false</SharedSecretEncrypted>
+                    <EncryptionProtocol>AES256</EncryptionProtocol>
+                    <Mtu>1500</Mtu>
+                    <IsEnabled>true</IsEnabled>
+                    <IsOperational>false</IsOperational>
+                </Tunnel>
+                <Tunnel>
+                    <Name>A to B</Name>
+                    <Description/>
+                    <IpsecVpnThirdPartyPeer>
+                        <PeerId>37.26.95.29</PeerId>
+                    </IpsecVpnThirdPartyPeer>
+                    <PeerIpAddress>37.26.95.29</PeerIpAddress>
+                    <PeerId>37.26.95.29</PeerId>
+                    <LocalIpAddress>172.26.1.69</LocalIpAddress>
+                    <LocalId>37.26.91.54</LocalId>
+                    <LocalSubnet>
+                        <Name>Web</Name>
+                        <Gateway>10.0.11.1</Gateway>
+                        <Netmask>255.255.255.0</Netmask>
+                    </LocalSubnet>
+                    <LocalSubnet>
+                        <Name>Admin</Name>
+                        <Gateway>10.0.1.1</Gateway>
+                        <Netmask>255.255.255.0</Netmask>
+                    </LocalSubnet>
+                    <LocalSubnet>
+                        <Name>DB</Name>
+                        <Gateway>10.0.21.1</Gateway>
+                        <Netmask>255.255.255.0</Netmask>
+                    </LocalSubnet>
+                    <PeerSubnet>
+                        <Name>10.0.2.0/24</Name>
+                        <Gateway>10.0.2.0</Gateway>
+                        <Netmask>255.255.255.0</Netmask>
+                    </PeerSubnet>
+                    <PeerSubnet>
+                        <Name> 10.0.12.0/24</Name>
+                        <Gateway> 10.0.12.0</Gateway>
+                        <Netmask>255.255.255.0</Netmask>
+                    </PeerSubnet>
+                    <PeerSubnet>
+                        <Name> 10.0.22.0/24</Name>
+                        <Gateway> 10.0.22.0</Gateway>
+                        <Netmask>255.255.255.0</Netmask>
+                    </PeerSubnet>
+                    <SharedSecret>uD7LD2sonZS3utLyLtHub8mKZ9B5s34vp7Ck5Cwx47pry3y365gs9U8H3cZp3jtj</SharedSecret>
+                    <SharedSecretEncrypted>false</SharedSecretEncrypted>
+                    <EncryptionProtocol>AES256</EncryptionProtocol>
+                    <Mtu>1500</Mtu>
+                    <IsEnabled>true</IsEnabled>
+                    <IsOperational>false</IsOperational>
+                </Tunnel>
+            </GatewayIpsecVpnService>
+        </EdgeGatewayServiceConfiguration>
+        <HaEnabled>false</HaEnabled>
+        <UseDefaultRouteForDnsRelay>false</UseDefaultRouteForDnsRelay>
+    </Configuration>
+</EdgeGateway>
