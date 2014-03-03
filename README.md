@@ -92,23 +92,23 @@ The provider understands the following configuration options below. Any of the
 options can be specified in the providers, profiles or the map files. (Anything
 in the map will override the profile which overrides the provider.)
 
-- *user*: Required
+- **user**: Required
 
   vCloud API user id without the '@<org-id>' part.
 
-- *org*: Required
+- **org**: Required
 
   vCloud organization ID.
 
-- *secret*: Required
+- **secret**: Required
 
   Password for user@org in the vCloud API.
 
-- *host* : Required
+- **host** : Required
 
   The hostname where the vCloud Director API lives.
 
-- *image*: Required
+- **image**: Required
 
   Recommended location: cloud.profiles
 
@@ -119,28 +119,28 @@ in the map will override the profile which overrides the provider.)
   `https://api.vcd.example.com/api/vAppTemplate/vappTemplate-03eadbca-9da9-48c2-9dd0-32bff6b6b2b2`
   This would be `03eadbca-9da9-48c2-9dd0-32bff6b6b2b2`
 
-- *vdc*: Required
+- **vdc**: Required
 
   The name of the VDC to create the vApp in. This is the exact string displayed
   in the vCloud Director GUI, not the underlying ID.
 
-- *network*: Required
+- **network**: Required
 
   The name (not uuid) of the network in `vdc` to put this box on. This network
   must have IP pool configured.
 
-- *size*: Optional
+- **size**: Optional
 
   Size of the VM (RAM & CPU) to configure the box to use. This is a lookup
   table, not the exact ram/cpu specifications.
 
-- *ssh_username*: Optional
+- **ssh_username**: Optional
 
   Default: root
 
   Username to use on the minion when bootstrapping the (installing salt-minion)
 
-- *dnat*: Optional
+- **dnat**: Optional
 
   Type: List of integers
 
