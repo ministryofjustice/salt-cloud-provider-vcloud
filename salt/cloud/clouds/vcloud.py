@@ -7,6 +7,7 @@ from lxml.builder import E
 import salt.config as config
 from salt.cloud.libcloudfuncs import *   # pylint: disable-msg=W0614,W0401
 from salt.utils import namespaced_function
+import salt.utils.cloud
 
 import libcloud
 from libcloud.compute.base import NodeImage
@@ -135,7 +136,7 @@ def create(vm_):
                 'script_args', vm_, __opts__
             ),
             'script_env': config.get_cloud_config_value('script_env', vm_, __opts__),
-            'minion_conf': salt.cloud.utils.minion_config(__opts__, vm_)
+            'minion_conf': salt.utils.cloud.minion_config(__opts__, vm_)
         }
 
         # Deploy salt-master files, if necessary
@@ -143,7 +144,7 @@ def create(vm_):
             deploy_kwargs['make_master'] = True
             deploy_kwargs['master_pub'] = vm_['master_pub']
             deploy_kwargs['master_pem'] = vm_['master_pem']
-            master_conf = salt.cloud.utils.master_config(__opts__, vm_)
+            master_conf = salt.utils.cloud.master_config(__opts__, vm_)
             deploy_kwargs['master_conf'] = master_conf
 
             if master_conf.get('syndic_master', None):
@@ -162,7 +163,7 @@ def create(vm_):
             del(event_kwargs['password'])
         ret['deploy_kwargs'] = event_kwargs
 
-        salt.cloud.utils.fire_event(
+        salt.utils.cloud.fire_event(
             'event',
             'executing deploy script',
             'salt/cloud/{0}/deploying'.format(vm_['name']),
@@ -170,7 +171,7 @@ def create(vm_):
         )
 
         deployed = False
-        deployed = salt.cloud.utils.deploy_script(**deploy_kwargs)
+        deployed = salt.utils.cloud.deploy_script(**deploy_kwargs)
 
         if deployed:
             log.info('Salt installed on {0}'.format(vm_['name']))
@@ -190,7 +191,7 @@ def create(vm_):
 
     ret.update(node.__dict__)
 
-    salt.cloud.utils.fire_event(
+    salt.utils.cloud.fire_event(
         'event',
         'created instance',
         'salt/cloud/{0}/created'.format(vm_['name']),
