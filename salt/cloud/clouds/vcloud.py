@@ -5,8 +5,8 @@ import logging
 from lxml.builder import E
 
 import salt.config as config
-from saltcloud.libcloudfuncs import *   # pylint: disable-msg=W0614,W0401
-from saltcloud.utils import namespaced_function
+from salt.cloud.libcloudfuncs import *   # pylint: disable-msg=W0614,W0401
+from salt.utils import namespaced_function
 
 import libcloud
 from libcloud.compute.base import NodeImage
