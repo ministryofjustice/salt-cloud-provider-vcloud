@@ -63,7 +63,7 @@ my_vcloud:
 ```
 vcd_tiny_vdc_a:
   provider: my_vcloud
-  image: 03eadbca-9da9-48c2-9dd0-32bff6b6b2b2
+  image: ubuntu-precies-ad04aef
   size: tiny
   vdc: 'my-org-a (BASIC)'
 ```
@@ -114,10 +114,8 @@ in the map will override the profile which overrides the provider.)
 
   Which vApp template to build images from.
 
-  The UUID part of the vApp template, for example given the following href to
-  the vApp
-  `https://api.vcd.example.com/api/vAppTemplate/vappTemplate-03eadbca-9da9-48c2-9dd0-32bff6b6b2b2`
-  This would be `03eadbca-9da9-48c2-9dd0-32bff6b6b2b2`
+  The name of the vAppTemplate in an accessible catalog for this vCloud
+  organization
 
 - **vdc**: Required
 

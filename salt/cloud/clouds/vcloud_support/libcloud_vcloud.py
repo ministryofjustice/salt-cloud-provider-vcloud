@@ -479,16 +479,14 @@ def apply_nat_rules(conn, rules, gateway):
     conn._wait_for_task_completion(res.object.get('href'))
 
 
-def create_vm(conn, name, image, network_name, vdc, size='tiny', dnat_list=[22,]):
+def create_vm(conn, name, image_name, network_name, vdc, size='tiny', dnat_list=[22,]):
     print(dnat_list)
     size = VM_SIZES.get(size)
 
-    image = NodeImage(
-        id = 'https://%s/api/vAppTemplate/vappTemplate-%s' %
-            ( conn.connection.host, image ),
-        name = 'unkown name',
-        driver = conn,
-    )
+    images = conn.ex_query('vAppTemplate', 'name==%s' % image_name)
+    if not images:
+        raise ValueError("Cannot find image '%s'!" % image_name )
+    image = conn._to_image(images[0])
 
     res = conn.ex_query(
         type='orgVdcNetwork',
