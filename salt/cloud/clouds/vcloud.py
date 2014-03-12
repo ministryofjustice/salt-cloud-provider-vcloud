@@ -205,13 +205,6 @@ def create(vm_):
     return ret
 
 
-# TODO we shold be able to do something like this:
-# script = namespaced_function(script, globals())
-# however the globals don't seem to work.
-def list_nodes(conn=None, call=None):
-    if not conn:
-        conn = get_conn()
-    return salt.cloud.libcloudfuncs.list_nodes(conn)
-
+list_nodes = namespaced_function(list_nodes, globals())
 script = namespaced_function(script, globals())
 
