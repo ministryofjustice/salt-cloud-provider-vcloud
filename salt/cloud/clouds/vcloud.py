@@ -115,10 +115,10 @@ def create(vm_):
             'start_action': __opts__['start_action'],
             'parallel': __opts__['parallel'],
             'sock_dir': __opts__['sock_dir'],
-            'conf_file': __opts__['conf_file'],
+            'conf_file': get_opt('conf_file', vm_),
             'minion_pem': vm_['priv_key'],
             'minion_pub': vm_['pub_key'],
-            'keep_tmp': __opts__['keep_tmp'],
+            'keep_tmp': get_opt('keep_tmp', vm_),
             'preseed_minion_keys': vm_.get('preseed_minion_keys', None),
             'sudo': config.get_cloud_config_value(
                 'sudo', vm_, __opts__, default=(ssh_username != 'root')
