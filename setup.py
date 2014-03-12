@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup(
     name='salt-cloud-provider-vcloud',
@@ -11,7 +11,7 @@ setup(
     author_email='',
     description='',
     long_description=__doc__,
-    packages=['salt.cloud.clouds.vcloud_support', 'salt.cloud.clouds'],
+    packages=find_packages('.', exclude=['test_data', 'tests']),
     namespace_packages=['salt.cloud.clouds', 'salt.cloud', 'salt'],
     zip_safe=False,
     platforms='any',
@@ -24,4 +24,5 @@ setup(
     ],
     classifiers=[
     ],
+    test_suite='tests',
 )
