@@ -12,7 +12,7 @@ import salt.utils.cloud
 import libcloud
 from libcloud.compute.base import NodeImage
 
-from .vcloud_support.libcloud_vcloud import get_vcloud_connection, wait_for_private_ips,\
+from salt.cloud.clouds.vcloud_support.libcloud_vcloud import get_vcloud_connection, wait_for_private_ips,\
     lookup_gateway_info, apply_nat_rules, parse_nat_rules, create_vm
 
 # Get logging started
